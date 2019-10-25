@@ -1,17 +1,9 @@
-# import rpyc
-
-# conn = rpyc.connect("localhost", 35000)
-# x = conn.root.add(4,7)
-# print(x)
-
-# try:
-#     resultado = conn.root.div(4,2)
-#     print(resultado)
-# except ZeroDivisionError:
-#     pass
 import rpyc
 
-connection = rpyc.connect('localhost', 35000)
+turismo = rpyc.connect('localhost', 35000)
+#hotel = rpyc.connect('localhost', 35001)
+#restaurante = rpyc.connect('localhost', 35002)
+#area = rpyc.connect('localhost', 35003)
 
 while True:
   cidade = input('Cidade para consulta (e para sair): ')
@@ -22,12 +14,12 @@ while True:
   dataIda = input('Digite a data de ida (DD/MM/AAAA): ')
   dataVolta = input('Digite a data de Volta (DD/MM/AAAA): ')
 
-  resultadoTurismo = connection.root.pesquisaTurismo()
-  resultadoHotel = connection.root.pesquisaHotel()
-  resultadoRestaurante = connection.root.pesquisaRestaurante()
-  resultadoAerea = connection.root.pesquisaAerea()
+  resultadoTurismo = turismo.root.pesquisaTurismo(cidade)
+  #resultadoHotel = hotel.root.pesquisaHotel(1, 2)
+  #resultadoRestaurante = restaurante.root.pesquisaRestaurante(1, 2)
+  #resultadoAerea = area.root.pesquisaAerea(1, 2)
 
   print(resultadoTurismo)
-  print(resultadoHotel)
-  print(resultadoRestaurante)
-  print(resultadoAerea)
+  #print(resultadoHotel)
+  #print(resultadoRestaurante)
+  #print(resultadoAerea)
