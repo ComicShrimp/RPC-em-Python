@@ -11,9 +11,6 @@ while True:
   if cidade == 'e':
     break
 
-  dataIda = input('Digite a data de ida (DD/MM/AAAA): ')
-  dataVolta = input('Digite a data de Volta (DD/MM/AAAA): ')
-
   resultadoTurismo = turismo.root.pesquisaTurismo(cidade)
   #resultadoHotel = hotel.root.pesquisaHotel(1, 2)
   #resultadoRestaurante = restaurante.root.pesquisaRestaurante(1, 2)
